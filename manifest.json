@@ -1,0 +1,25 @@
+{
+    "version": "1.0",
+    "manifest_version": 2,
+    "name": "PageFont Style extension",
+    "description": "changes font style on a specific page",
+    "page_action":{
+        "default_popup" : "popup.html",
+        "default_title" : "Page font style"
+    },
+    "background":{
+        "scripts":["eventPage.js"],
+        "persistent":false
+    },
+    "content_scripts":[
+        {
+            "matches":["https://www.redbus.com/*"],
+            "js":["content.js","jquery.js"],
+            "css":["content.css"]
+        }
+    ],
+    "permissions":[
+        "tabs",
+        "https://www.redbus.com/*"
+    ]
+}
